@@ -14,9 +14,9 @@
           <p class="text-xl md:text-2xl text-gray-400 font-light tracking-wide">Web Developer</p>
   
           <div class="mt-12">
-            <a href="#work" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 font-orbitron tracking-wide">
+            <router-link href="" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 font-orbitron tracking-wide">
               Explore
-            </a>
+            </router-link>
           </div>
         </div>
       </section>
