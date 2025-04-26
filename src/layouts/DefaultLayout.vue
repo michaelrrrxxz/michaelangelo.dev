@@ -12,7 +12,7 @@
   </template>
   
   <script setup>
-  import Navigation from '../components/Navigation.vue'
-  import Footer from '../components/Footer.vue'
+  import Navigation from '../core/Navigation.vue'
+  import Footer from '../core/Footer.vue'
   </script>
   

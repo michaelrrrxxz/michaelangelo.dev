@@ -5,11 +5,11 @@
   
   <script setup>
   import { onMounted } from 'vue';
+  import Navigation from './core/Navigation.vue';
+  import Footer from './core/Footer.vue';
+
+
 //   import SpiralBg from './components/SpiralBg.vue';
-  import Navigation from './components/Navigation.vue';
-  import Hero from './components/Hero.vue';
-  import TechStack from './components/TechStack.vue';
-  import Footer from './components/Footer.vue';
 
 // Typewriter effect and GSAP animation logic
 onMounted(() => {
