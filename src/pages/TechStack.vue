@@ -54,6 +54,16 @@ const techStack = [
     desc: 'Version control',
     img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
   },
+  {
+    name: 'AdonisJS',
+    desc: 'Node.js MVC framework',
+    img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/adonisjs/adonisjs-original.svg',
+  },
+  {
+    name: 'Inertia.js',
+    desc: 'SPA glue for classic server frameworks',
+    img: 'https://raw.githubusercontent.com/inertiajs/inertiajs.com/master/public/icon-white.svg',
+  },
 ]
 </script>
 <style scoped>

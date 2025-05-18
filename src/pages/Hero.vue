@@ -31,20 +31,7 @@
           <div v-if="!gameOver">
             <p class="text-gray-400 mb-6">Click the circle! Score: {{ score }}</p>
 
-            <div
-              v-if="showCircle"
-              :style="{ top: circleY + 'px', left: circleX + 'px' }"
-              class="w-10 h-10 bg-blue-500 rounded-full absolute cursor-pointer transition-all duration-300 hover:scale-110"
-              @click="handleCircleClick"
-            ></div>
-          </div>
-
-          <div v-else>
-            <p class="text-red-500 text-2xl font-bold mb-4">Game Over!</p>
-            <p class="text-gray-400 mb-6">Your Final Score: {{ score }}</p>
-            <button @click="restartGame" class="px-6 py-2 border border-white hover:bg-white hover:text-black transition-colors duration-300 font-orbitron tracking-wide">
-              Restart
-            </button>
+           
           </div>
         </div>
       </div>
@@ -72,44 +59,5 @@ const lyrics = [
 const randomLyric = ref(lyrics[Math.floor(Math.random() * lyrics.length)])
 
 // Game Logic
-const score = ref(0)
-const showCircle = ref(true)
-const circleX = ref(100)
-const circleY = ref(100)
-const gameOver = ref(false)
-let circleTimer = null
-let currentSpeed = ref(2000) // 2 seconds to start
 
-function moveCircle() {
-  const windowWidth = window.innerWidth - 50
-  const windowHeight = window.innerHeight - 50
-  circleX.value = Math.random() * windowWidth
-  circleY.value = Math.random() * windowHeight
-
-  clearTimeout(circleTimer)
-  circleTimer = setTimeout(() => {
-    showCircle.value = false
-    gameOver.value = true
-  }, currentSpeed.value)
-}
-
-function handleCircleClick() {
-  score.value++
-  if (currentSpeed.value > 600) {
-    currentSpeed.value -= 100 // Faster every click (min 600ms)
-  }
-  moveCircle()
-}
-
-function restartGame() {
-  score.value = 0
-  currentSpeed.value = 2000
-  gameOver.value = false
-  showCircle.value = true
-  moveCircle()
-}
-
-onMounted(() => {
-  moveCircle()
-})
 </script>
