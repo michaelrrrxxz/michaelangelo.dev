@@ -14,7 +14,7 @@
 // Typewriter effect and GSAP animation logic
 onMounted(() => {
   // Typewriter effect
-  type();
+
 
   // GSAP Scroll Animation
   gsap.registerPlugin(ScrollTrigger);

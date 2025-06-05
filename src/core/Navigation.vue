@@ -9,27 +9,18 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex space-x-8 orbitron tracking-wide">
-        <router-link 
-          to="/tech" 
-          class="hover:text-blue-400 transition" 
-          active-class="text-blue-400 font-bold"
+        <div
+            v-for="(nav, index) in navigation"
+            :key="index"
         >
-          TECH
-        </router-link>
-        <router-link 
-          to="/about" 
-          class="hover:text-blue-400 transition" 
-          active-class="text-blue-400 font-bold"
-        >
-          ABOUT
-        </router-link>
-        <router-link 
-          to="/contact" 
-          class="hover:text-blue-400 transition" 
-          active-class="text-blue-400 font-bold"
-        >
-          CONTACT
-        </router-link>
+          <router-link 
+            :to="nav.url" 
+            class="hover:text-blue-400 transition" 
+            active-class="text-blue-400 font-bold"
+          >
+            {{ nav.label.toUpperCase() }}
+          </router-link>
+        </div>
       </div>
 
       <!-- Mobile Button -->
@@ -40,30 +31,17 @@
     </div>
 
     <!-- Mobile Menu -->
-    <div v-if="menuOpen" class="md:hidden px-6 pb-4 space-y-4 bg-black orbitron tracking-wide">
+    <div v-if="menuOpen"
+      v-for="(nav, index) in navigation"
+      :key="index"
+     class="md:hidden px-6 pb-4 space-y-4 bg-black orbitron tracking-wide">
       <router-link 
-        to="/tech" 
+        :to="nav.url" 
         class="block hover:text-blue-400 transition" 
         active-class="text-blue-400 font-bold"
         @click="closeMenu"
       >
-        TECH
-      </router-link>
-      <router-link 
-        to="/about" 
-        class="block hover:text-blue-400 transition" 
-        active-class="text-blue-400 font-bold"
-        @click="closeMenu"
-      >
-        ABOUT
-      </router-link>
-      <router-link 
-        to="/contact" 
-        class="block hover:text-blue-400 transition" 
-        active-class="text-blue-400 font-bold"
-        @click="closeMenu"
-      >
-        CONTACT
+        {{ nav.label.toUpperCase() }}
       </router-link>
     </div>
   </nav>
@@ -81,4 +59,25 @@ const toggleMenu = () => {
 const closeMenu = () => {
   menuOpen.value = false
 }
+
+const navigation = [
+  {
+    label:'about',
+    url: '/about',
+
+  },
+  {
+    label: 'tech stack',
+    url: '/tech',
+  },
+  {
+    label: 'contact',
+    url: '/contact',
+  },
+  {
+    label: 'projects',
+    url: '/projects',
+  },
+
+  ]
 </script>
