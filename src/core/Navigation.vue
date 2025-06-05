@@ -62,22 +62,21 @@ const closeMenu = () => {
 
 const navigation = [
   {
-    label:'about',
+    label: 'about',
     url: '/about',
-
   },
   {
     label: 'tech stack',
     url: '/tech',
   },
   {
-    label: 'contact',
-    url: '/contact',
-  },
-  {
     label: 'projects',
     url: '/projects',
   },
+  {
+    label: 'contact',
+    url: '/contact',
+  },
+];
 
-  ]
 </script>

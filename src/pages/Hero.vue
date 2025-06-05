@@ -23,7 +23,7 @@
         </p>
 
         <div ref="button" class="mt-6">
-          <router-link to="/" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 font-orbitron tracking-wide">
+          <router-link to="/explore" class="inline-block px-8 py-3 border border-white text-white hover:bg-white hover:text-black transition-colors duration-300 font-orbitron tracking-wide">
             Explore
           </router-link>
         </div>

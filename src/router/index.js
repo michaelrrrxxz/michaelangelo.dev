@@ -6,6 +6,7 @@ import About from '../pages/About.vue'
 import Contact from '../pages/Contact.vue'
 import NotFound from '../errors/NotFound.vue'
 import Projects from '../pages/Projects.vue'
+import Explore from '../pages/Explore.vue'
 
 const routes = [
   { path: '/', component: HeroPage },
@@ -13,6 +14,7 @@ const routes = [
   { path: '/tech', component: TechStack },
   { path: '/contact', component: Contact },
   {path: '/projects', component: Projects},
+  {path: '/explore', component: Explore},
   
 
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
