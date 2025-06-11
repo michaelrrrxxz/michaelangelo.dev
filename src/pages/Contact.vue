@@ -6,12 +6,13 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-center">
           <div
-            v-for="(item, i) in contacts"
-            :key="i"
-            class="contact-card bg-[#0f0f0f] p-6 border border-white/10 transition-all shadow-md rounded-lg flex flex-col items-center justify-center cursor-pointer"
-            :style="{ '--hover-color': item.color }"
-            @mousedown="onCardDown($event, i)"
-          >
+              v-for="(item, i) in contacts"
+              :key="i"
+              class="contact-card bg-[#0f0f0f] p-6 border border-white/10 transition-all shadow-md rounded-lg flex flex-col items-center justify-center cursor-pointer"
+              :style="{ '--hover-color': item.color }"
+              @mousedown="onCardDown($event, i)"
+              @click="goToLink(item.url)"
+            >
             <i :class="item.icon + ' text-3xl mb-2'" :style="{ color: item.color }"></i>
             <p class="text-sm text-gray-400">{{ item.label }}</p>
           </div>
@@ -67,6 +68,13 @@ const contacts = [
     url: 'mailto:mangaoang.michaelangel023@gmail.com',
   },
 ]
+
+const goToLink = (url) => {
+  if (!isDragging) {
+    window.open(url, '_blank')
+  }
+}
+
 
 let isDragging = false
 let activeCard = null
